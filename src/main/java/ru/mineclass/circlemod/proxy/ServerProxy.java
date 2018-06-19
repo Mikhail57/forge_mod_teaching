@@ -1,21 +1,22 @@
 package ru.mineclass.circlemod.proxy;
 
-import net.minecraft.item.Item;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import ru.mineclass.circlemod.register.BlocksRegister;
 
-public abstract class CommonProxy {
+public class ServerProxy extends CommonProxy {
+    @Override
     public void preInit(FMLPreInitializationEvent event) {
-        BlocksRegister.register();
+        super.preInit(event);
     }
 
+    @Override
     public void init(FMLInitializationEvent event) {
-
+        super.init(event);
     }
 
+    @Override
     public void postInit(FMLPostInitializationEvent event) {
-
+        super.postInit(event);
     }
 }
