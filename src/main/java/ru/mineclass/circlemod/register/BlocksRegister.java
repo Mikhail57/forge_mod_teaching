@@ -12,7 +12,7 @@ import net.minecraftforge.registries.IForgeRegistry;
 import ru.mineclass.circlemod.blocks.CirclesBlock;
 
 public class BlocksRegister {
-    public static CirclesBlock block = new CirclesBlock("lol");
+    public static CirclesBlock block = new CirclesBlock("circleblock");
 
     private static final Block[] blocks = {
             block
@@ -24,7 +24,7 @@ public class BlocksRegister {
 
     @SideOnly(Side.CLIENT)
     public static void registerRender() {
-//        setRender(blocks);
+        setRender(blocks);
     }
 
     private static void setRegister(Block[] blocks) {
