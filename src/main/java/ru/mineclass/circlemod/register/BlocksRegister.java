@@ -11,22 +11,38 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.registries.IForgeRegistry;
 import ru.mineclass.circlemod.blocks.CirclesBlock;
 
+/**
+ * Класс-помощник для регистрации блока в игре
+ */
 public class BlocksRegister {
     public static CirclesBlock block = new CirclesBlock("circleblock");
 
+    /**
+     * Список блоков, которые мы хотим инициализировать
+     */
     private static final Block[] blocks = {
             block
     };
 
+    /**
+     * Метод для регистрации блока
+     */
     public static void register() {
         setRegister(blocks);
     }
 
+    /**
+     * Метод для регистрации модели нашего блока
+     */
     @SideOnly(Side.CLIENT)
     public static void registerRender() {
         setRender(blocks);
     }
 
+    /**
+     * Внутренний вспомогательный метод для регистрации
+     * @param blocks блоки для регистрации
+     */
     private static void setRegister(Block[] blocks) {
         for (Block b : blocks) {
             ForgeRegistries.BLOCKS.register(b);
@@ -36,6 +52,10 @@ public class BlocksRegister {
         }
     }
 
+    /**
+     * Внутренний вспомогательный метод для регистрации моделей блоков
+     * @param blocks блоки для регистрации
+     */
     @SideOnly(Side.CLIENT)
     private static void setRender(Block[] blocks) {
         for (Block b : blocks) {

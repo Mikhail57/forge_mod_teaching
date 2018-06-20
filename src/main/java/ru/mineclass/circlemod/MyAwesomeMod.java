@@ -10,6 +10,12 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import org.apache.logging.log4j.Logger;
 import ru.mineclass.circlemod.proxy.CommonProxy;
 
+/**
+ * Класс, содержащий главную информацию по моду:
+ * - modid,
+ * - имя,
+ * - версию
+ */
 @Mod(modid = MyAwesomeMod.MODID, name = MyAwesomeMod.NAME, version = MyAwesomeMod.VERSION)
 public class MyAwesomeMod {
     public static final String MODID = "circlemod";
@@ -18,6 +24,9 @@ public class MyAwesomeMod {
 
     private static Logger logger;
 
+    /**
+     * Прокси для нормального функционирования мода
+     */
     @SidedProxy(clientSide = "ru.mineclass.circlemod.proxy.ClientProxy",
             serverSide = "ru.mineclass.circlemod.proxy.ServerProxy")
     private static CommonProxy proxy;
@@ -30,8 +39,6 @@ public class MyAwesomeMod {
 
     @EventHandler
     public void init(FMLInitializationEvent event) {
-        // some example code
-        logger.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
         proxy.init(event);
     }
 
