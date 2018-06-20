@@ -4,6 +4,9 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
+/**
+ * Прокси для серверной стороны
+ */
 public class ServerProxy extends CommonProxy {
     @Override
     public void preInit(FMLPreInitializationEvent event) {

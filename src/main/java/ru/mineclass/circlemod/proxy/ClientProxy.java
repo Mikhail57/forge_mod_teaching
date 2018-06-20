@@ -8,7 +8,11 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import ru.mineclass.circlemod.MyAwesomeMod;
 import ru.mineclass.circlemod.register.BlocksRegister;
+import ru.mineclass.circlemod.register.ItemsRegister;
 
+/**
+ * Прокси для действий, выполняемых со стороны клиента
+ */
 public class ClientProxy extends CommonProxy {
 
     @Override
@@ -20,6 +24,7 @@ public class ClientProxy extends CommonProxy {
     public void init(FMLInitializationEvent event) {
         super.init(event);
         BlocksRegister.registerRender();
+        ItemsRegister.registerRender();
     }
 
     @Override
